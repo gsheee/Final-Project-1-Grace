@@ -68,7 +68,7 @@ if permission1 || permission2 {
 // Prints "PERMISSION GRANTED"
 ```
 
-The first `Bool` value (`permission1`) is `true`. Because one value is `true`, it does not matter that the second `Bool` value (`permission2`) is `false`; the overall expresstion evaluates to `true`.
+The first `Bool` value (`permission1`) is `true`. Because one value is `true`, it doesn't matter that the second `Bool` value (`permission2`) is `false`; the overall expression evaluates to `true`.
 
 You can combine multiple logical operators to create longer compound expressions. The logical operators `&&` and `||` are evaluated from left to right. Thus, it is **useful** to include parentheses even if they are not strictly needed, with the intention of making a complex expression easier to read.
 
@@ -81,7 +81,7 @@ You can combine multiple logical operators to create longer compound expressions
 ">=" greater than or equal to (a >= b)  
 "<=" less than or equal to (a <= b)  
 
-Each of the comparison operators retunrs a `Bool` value to indicate whether or not the statement is true:
+Each of the comparison operators returns a `Bool` value to indicate whether or not the statement is true:
 
 ```Swift
 2 == 2 // Returns true b/c 2 IS equal to 2
@@ -96,7 +96,7 @@ The < and > operators **CANNOT** be applied to `Bool` values. In other words, `B
 
 ## Ternary Conditional Operator
 
-The **ternary conditional operator** has three parts and takes the form `question ? answer1 : answer2`. It is a **shortcut** for carrying out one of two expressions based on whther `question` is true or false. If `question` is true, it evaluates `answer1` and returns its value; otherwise, it evaluates `answer2` and returns its value. This is how the structure looks like:
+The **ternary conditional operator** has three parts and takes the form `question ? answer1 : answer2`. It is a **shortcut** for carrying out one of two expressions based on whther `question` is true or false. If `question` is true, it evaluates `answer1` and returns its value; otherwise, it evaluates `answer2` and returns its value. This is what the structure looks like:
 
 ```Swift
 if question {
@@ -128,7 +128,7 @@ let finalMark = currentMark + (examPassed ? 50 : 20)
 
 ## Else If 
 
-If the inital condition of the if-statement is not satisfied, it can test out another condition written by `else if`. The `else-if` statement is written before `else`:
+If the initial condition of the if-statement is not satisfied, it can test out another condition written by `else if`. The `else-if` statement is written before `else`:
 
 ```Swift
 if question1 {
@@ -172,11 +172,11 @@ if x > 10 {
 The outer `if` is evaluated first. The inner `if` is ***only*** evaluated if the outer `if` condition is `true`. Tips for using nested `if` statements:
 
 - Avoid having too many levels of nested ifs – this makes the code hard to read. Try to use logical operators (&&, ||) when possible.
-- Make sure the nested if is absolutely necessary and cannot be replaced with and `else if`statement.
+- Make sure the nested if is absolutely necessary and cannot be replaced with an `else if` statement.
 
 ## Switch
 
-A `switch` statements considers a value and compares it against several possible matching patterns. 
+A `switch` statement considers a value and compares it against several possible matching patterns. 
 It then executes an appropriate block of code based on the ***first pattern that matches successfully***. 
 It's an alternative to the `if` statement for responding to multiple potential states.
 
@@ -193,7 +193,7 @@ default:
 }
 ```
 
-In every `switch` statement, every possible value of the type being considered must be matched by one of the `switch` cases. If it's not appropriate to provide a case for eevry possible value, define a default case to cover any values that aren't addressed explicitly: this is indicated by the `default` keyword and must appear LAST.
+In every `switch` statement, every possible value of the type being considered must be matched by one of the `switch` cases. If it's not appropriate to provide a case for every possible value, define a default case to cover any values that aren't addressed explicitly: this is indicated by the `default` keyword and must appear LAST.
 
 ```Swift
 // This example uses a switch statement to consider a single lowercase character
@@ -211,7 +211,7 @@ default:
 
 ### Value Bindings
 
-A `switch` case can name the value it matches to **temporary constants or variables**, for used in the body of the case. This is known as ***value binding***:
+A `switch` case can name the value it matches to **temporary constants or variables** for use in the body of the case. This is known as ***value binding***:
 
 ```Swift
 let anotherPoint = (2, 0)
@@ -248,7 +248,7 @@ case let (x, y):
 
 ### Break in Switch Cases
 
-When used inside a `switch` statement, the `break` keyword causes the stateent to end its execution immediately. Becuase empty cases are not allowed, this can used to deliberately match and ignore a case:
+When used inside a `switch` statement, the `break` keyword causes the statement to end its execution immediately. Because empty cases are not allowed, this can used to deliberately match and ignore a case:
 
 ```Swift
 let anotherPoint = (2, 0)
