@@ -1,14 +1,14 @@
 # Collections
 
-Swift provides three primary collection types, know as **arrays**, **sets**, and **dictionaries**. 
+Swift provides three primary collection types, known as **arrays**, **sets**, and **dictionaries**. 
 
 Arrays – ordered collections of values  
 Sets - unordered collections of ***unique*** values  
 Dictionaries - unordered collections of ***key-value*** associations
 
-If you create an array, a set, or a dictionary, and assign it to a **variable**, the collection is ***mutable*** (can be changed later on by adding, removing or changing items in the collection). If the collection is assigned to a **constant**, it is ***immutable*** (its size and contents can't be changed).
+If you create an array, a set, or a dictionary, and assign it to a **variable**, the collection is ***mutable*** (can be changed later on by adding, removing, or changing items in the collection). If the collection is assigned to a **constant**, it is ***immutable*** (its size and contents can't be changed).
 
-No matter what type of collection is created, is it alwats clear about the types of values and keys that can be stored. A value of the wrong type cannot be inserted into a collection.
+No matter what type of collection is created, it is545u always clear about the types of values and keys that can be stored. A value of the wrong type cannot be inserted into a collection.
 
 ## Arrays
 
@@ -46,7 +46,7 @@ var fiveDoubles = threeDoubles + twoDoubles
 
 ### Creating an Array with an Array Literal
 
-An array can be initialized with an **array literal**, which is a shorthand way to write one or more values as an array collection. An array literal is written as a list of values, seperated by commas, surrounded by a pair of square bracket: `[<#value1#>, <#value2#>, <#value3#>]`. E.g.:
+An array can be initialized with an **array literal**, which is a shorthand way to write one or more values as an array collection. An array literal is written as a list of values, separated by commas, surrounded by a pair of square brackets: `[<#value1#>, <#value2#>, <#value3#>]`. E.g.:
 
 ```Swift
 var toDo: = ["do homework", "shower", "walk dog", "cook dinner"]
@@ -56,7 +56,7 @@ var toDo: = ["do homework", "shower", "walk dog", "cook dinner"]
 ### Accessing and Modifying an Array
 
 .count – returns the number of items in an array  
-.isEmpty – returns true if the array is empty (array.count = 0), false elsewise  
+.isEmpty – returns true if the array is empty (array.count = 0), false else wise  
 .append(_:) – adds a new item to the end of the array  
 
 ```Swift
@@ -73,16 +73,16 @@ toDo.append("do the dishes")
 // toDo now contains 5 items
 
 toDo += ["workout", "sleep"] // another way to add more items
-// toDo now containts 7 items
+// toDo now contains 7 items
 
-var firstItem = toDo[0] // retrives the item at the given index of the array
+var firstItem = toDo[0] // retrieves the item at the given index of the array
 // firstItem is equal to "do homework"
 ```
 
 > **Note**  
-The first item in the array has an index of 0, not 1. This means the last item in the array has an index of `array.count - 1`. Accessing the value at index `array.count - 1` will result in an runtime error because it is an invalid index.
+The first item in the array has an index of 0, not 1. This means the last item in the array has an index of `array.count - 1`. Accessing the value at index `array.count - 1` will result in a runtime error because it is an invalid index.
 
-You can change a range of values at once, even if th replacement set of values has a different lenght than the range you are replacing:
+You can change a range of values at once, even if the replacement set of values has a different length than the range you are replacing:
 
 ```Swift
 toDo[2...5] = ["eat dinner", "do laundry"] // with the closed range operator, indices 2, 3, 4, 5 are all included
@@ -99,7 +99,7 @@ toDo.insert("clean the house", at: 0)
 // "clean the house" is now the first item in the list
 
 let cleanHouse = toDo.remove(at: 0)
-// the item that was at index 0 ("clen the house") has just been removed
+// the item that was at index 0 ("clean the house") has just been removed
 // toDo now contains 5 items, and no "clean the house"
 // the cleanHouse constant is now equal to the removed "clean the house" string
 
@@ -124,7 +124,7 @@ for item in toDo {
 // do laundry
 ```
 
-.enumerated() – returns a tuple conposed of the integer index of each item and its value:
+.enumerated() – returns a tuple composed of the integer index of each item and its value:
 
 ```Swift
 for (index, item) in toDo {
@@ -180,9 +180,9 @@ print("The variable letters is of type Set<Character> with \(letters.count) item
 
 // Initializing a set with an array literal
 var favGenres: Set<String> = ["Comedy", "Action", "Romance", "Horror"]
-// favGenres has veen initialized with four initial items 
+// favGenres has been initialized with four initial items 
 
-var favGenres: Set = ["Comedy", "Action", "Romance", "Horror"] // this is also acceptable, but the type Set must be explicityly declared
+var favGenres: Set = ["Comedy", "Action", "Romance", "Horror"] // this is also acceptable, but the type Set must be explicitly declared
 ```
 
 ### Accessing and Modifying a Set
@@ -196,7 +196,7 @@ var favGenres: Set = ["Comedy", "Action", "Romance", "Horror"] // this is also a
 
 ### Iterating Over a Set
 
-The values in a set can be iterated over with a `for-in` loop. Because Swift's Set type doesn't have a defined ordering, to iterate over the values in a specific order, use the `.sorted()` method (returns the set's elements as a array sorted in ascending order):
+The values in a set can be iterated over with a `for-in` loop. Because Swift's Set type doesn't have a defined ordering, to iterate over the values in a specific order, use the `.sorted()` method (returns the set's elements as an array sorted in ascending order):
 
 ```Swift
 for genre in favGenres.sorted() {
@@ -232,7 +232,7 @@ oddDigits.symmetricDifference(singleDigitPrimeNum).sorted() // [1, 2, 9]
 
 ***==*** – determines if two sets contain all of the same values  
 ***isSubset(of:)*** – determines whether all of the values of a set are contained in the specific set (`a.isSubset(of: b)` returns true if all of a's values are found in b)  
-***isSuperset(of:)*** – determins whether a set contains all of the values in a specified set (`a.isSuperset(of: b)` returns true if all of b's values are found in a)  
+***isSuperset(of:)*** – determines whether a set contains all of the values in a specified set (`a.isSuperset(of: b)` returns true if all of b's values are found in a)  
 ***isStrictSubset(of:)*** or ***isStrictSuperset(of):*** – determines whether a set is a subset or superset, but not equal to, a specified set (`a.isStrictSuperset(of: b)` returns true if all of b's values are found in a but a != b)
 ***isDisjoint(with:)*** – determines whether two sets have no values in common
 
@@ -259,10 +259,10 @@ var message = "We all love winter break!"
 message[message.startIndex] // W
 message[message.index(before: greenting.endIndex)] // ! (one character before endIndex is the last character)
 message[message.index(after: message.startIndex)] // e
-let index = message.indeax(message.startIndex, offsetBy: 7) // l (7 after startIndex, excluding startIndex)
+let index = message.index(message.startIndex, offsetBy: 7) // l (7 after startIndex, excluding startIndex)
 ```
 
-Attempting to acces an index outside of a string's range or a `Character` at an index outside of string's range will trigger a ***runtime error***.
+Attempting to access an index outside of a string's range or a `Character` at an index outside of the string's range will trigger a ***runtime error***.
 
 To insert a single character into a string at a **specific index**, use the `insert(:at:)` method. This can only be used to insert a **single** character into a string. TO insert the contents of another string (anything longer than one character), you must use the `insert(contentsOf:at:)` method.
 
@@ -274,11 +274,8 @@ print(message) // Prints "hello!"
 message = "hello"
 message.insert(contentsOf: " there", at: message.endIndex) // Prints "hello there"
 
-message.insert("!!!", at: message.endIndex) // error. Inserting multiple characters requires the use of contentsOf before the string to be inserted.
+message.insert("!!!", at: message.endIndex) // error. Inserting multiple characters requires the use of contentsOf before the string that is to be inserted.
 ```
-
-
-
 
 ### Dictionary
 
@@ -306,7 +303,7 @@ var schoolBoards: [String: String] = ["TDSB": "Toronto District School Board", "
 ***.count*** – returns the number of items in a `Dictionary`  
 ***.isEmpty*** – returns true if the dictionary is empty (.count returns 0)  
 
-You can add a new item to a dictionary by using a new key of the appropriate type as the index and assigning a new vlue of the appropriate type:
+You can add a new item to a dictionary by using a new key of the appropriate type as the index and assigning a new value of the appropriate type:
 
 ```Swift
 schoolBoards["YRCDSB": "York Region Catholic District School Board"]
@@ -318,9 +315,9 @@ You can also change the value associated with a particular key by indexing the k
 schoolBoards["YRCDSB"] = "York Region Catholic DSB"
 ```
 
-You can also **set or update** the value for a particular key using `updateVlaue(_:forKey:)`. This method sets a value for a key if non exists, or updates the value if that key already exists. This method ***returns the old value after performing an update.***
+You can also **set or update** the value for a particular key using `updateVlaue(_:forKey:)`. This method sets a value for a key if none exists, or updates the value if that key already exists. This method ***returns the old value after performing an update.***
 
-However, this method returns an **optional value** of the dictionary's value type. THe optional value contains the old value for that key if one existed before the update, or `nil` if no value existed:
+However, this method returns an **optional value** of the dictionary's value type. The optional value contains the old value for that key if one existed before the update, or `nil` if no value existed:
 
 ```Swift
 let oldValue = schoolBoards.updateValue("York Region Catholic District School Board", forKey: "YRCDSB")
@@ -338,7 +335,7 @@ schoolBoards["YRDSB"] = nil
 // YRDSB has been removed from the dictionary
 ```
 
-You can also remove a key-value pair from a dictionary with the `removeValue(forKey:)` method. This method removes the key-value pair if it exists and ***returns the removed value***, or ***returns `nil` if no value existed*** (This means the returned value has a optional type):
+You can also remove a key-value pair from a dictionary with the `removeValue(forKey:)` method. This method removes the key-value pair if it exists and ***returns the removed value***, or ***returns `nil` if no value existed*** (This means the returned value has an optional type):
 
 ```Swift
 let removedValue = schoolBoards.removeVlaue(forKey: "TDSB")
