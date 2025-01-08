@@ -215,7 +215,7 @@ A `switch` case can name the value it matches to **temporary constants or variab
 
 ```Swift
 let anotherPoint = (2, 0)
-switch anotherpoint {
+switch anotherPoint {
 case (let x, 0):
     print("on the x-axis when an x value of \(x)")
 case (0, let y):
