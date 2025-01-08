@@ -261,5 +261,3 @@ case let (x, y):
     break
 } // nothing is printed
 ```
-
-- fallthrough? too much work...
